@@ -56,6 +56,10 @@ const Sidebar = () => {
                                 <i className="fa-solid fa-gauge text-primary"></i>
                                 {dictionary.CONSOLE.SIDE_MENU_DASHBOARD}
                             </SidebarButton>
+                            <SidebarButton to="/console/analitycs">
+                                <i className="fa-solid fa-chart-column text-primary"></i>
+                                {dictionary.CONSOLE.SIDE_MENU_ANALYTICS}
+                            </SidebarButton>
                             <SidebarButton to="/console/profile">
                                 <i className="fa-regular fa-user text-primary"></i>
                                 {dictionary.CONSOLE.SIDE_MENU_PROFILE}

@@ -4,6 +4,7 @@ export default {
         CONSOLE: {
             CREATE_BTN: "Crea",
             SIDE_MENU_DASHBOARD: "Dashboard",
+            SIDE_MENU_ANALYTICS: "Analisi Dati",
             SIDE_MENU_PROFILE: "Profilo",
         },
     },
@@ -12,6 +13,7 @@ export default {
         CONSOLE: {
             CREATE_BTN: "Create",
             SIDE_MENU_DASHBOARD: "Dashboard",
+            SIDE_MENU_ANALYTICS: "Analytics",
             SIDE_MENU_PROFILE: "Profile",
         },
     }

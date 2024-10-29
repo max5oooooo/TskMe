@@ -8,6 +8,7 @@ import Home from "./pages/Home"
 
 import HomeConsole from "./pages/console/Home"
 import ProfileConsole from "./pages/console/Profile"
+import AnalitycsConsole from "./pages/console/Analitycs"
 
 const ProtectedRoute = ({ children }) => {
     const auth = useSelector((state) => state.auth);
@@ -29,6 +30,7 @@ const App = () => {
                     </ProtectedRoute>
                 }>
                     <Route path="" element={<HomeConsole />} />
+                    <Route path="analitycs" element={<AnalitycsConsole />} />
                     <Route path="profile" element={<ProfileConsole />} />
                 </Route>
             </Routes>
