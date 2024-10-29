@@ -5,6 +5,7 @@ import LogoutButton from "../shared/LogoutButton";
 import ActionButton from "../shared/ActionButton";
 import useDictionary from "../../hook/useDictionary";
 import SwitchLanguage from "../shared/SwitchLanguage";
+import ConsoleModal from "./ConsoleModal";
 
 const SidebarButton = ({ to, children }) => {
     const location = useLocation();
@@ -51,6 +52,10 @@ const Sidebar = () => {
                             <i className="fa-regular fa-user text-primary"></i>
                             {dictionary.CONSOLE.SIDE_MENU_PROFILE}
                         </SidebarButton>
+
+                        <ConsoleModal>
+                            
+                        </ConsoleModal>
                     </div>
                 </div>
             </div>

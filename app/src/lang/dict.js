@@ -12,7 +12,7 @@ export default {
         CONSOLE: {
             CREATE_BTN: "Create",
             SIDE_MENU_DASHBOARD: "Dashboard",
-            SIDE_MENU_PROFILE: "Profile"
+            SIDE_MENU_PROFILE: "Profile",
         },
     }
 }
