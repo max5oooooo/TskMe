@@ -9,6 +9,7 @@ import Home from "./pages/Home"
 import HomeConsole from "./pages/console/Home"
 import ProfileConsole from "./pages/console/Profile"
 import AnalitycsConsole from "./pages/console/Analitycs"
+import RegisterPage from "./pages/RegisterPage"
 
 const ProtectedRoute = ({ children }) => {
     const auth = useSelector((state) => state.auth);
@@ -23,6 +24,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<RootLayout />}>
                     <Route path="" element={<Home />} />
+                    <Route path="register" element={<RegisterPage />} />
                 </Route>
                 <Route path="/console" element={
                     <ProtectedRoute>
