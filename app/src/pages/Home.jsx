@@ -3,6 +3,7 @@ import useDictionary from "../hook/useDictionary";
 import { login } from "../store/slices/authSlice";
 import { Link, useNavigate } from "react-router-dom";
 
+
 const Home = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -17,8 +18,8 @@ const Home = () => {
   return (
     <>
         <h1>{dictionary.HOME_CTA_TITLE}</h1>
-        <Link to={"/register"}>Registrati Qui!</Link>
-        
+        <Link to={"/register"}>Registrati Qui!</Link><br />
+        <Link to={"/login"}>Login qui!</Link><br />
         <button onClick={handleLogin}>Login</button>
     </>
   )
