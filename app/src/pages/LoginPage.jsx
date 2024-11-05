@@ -29,8 +29,6 @@ const LoginPage = () => {
         onSaveRegister(form);
         setForm({
             first_name: "",
-            last_name: "",
-            email: "",
             password: "",
         });
     }
