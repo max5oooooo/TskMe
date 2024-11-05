@@ -15,7 +15,7 @@ export default {
         "lb-priority-tsk": "#E0C86E",
         "lb-priority-proj": "#E0A25B",
         "bg-primary": "#40916C",
-      }
+      },
     },
   },
   plugins: [],
