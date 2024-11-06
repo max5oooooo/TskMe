@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Modal from "../shared/Modal";
+import { useDispatch } from "react-redux";
+import { addTask } from "../../store/slices/taskSlice";
 
 const ConsoleModal = ({ isOpen, onCloseModal = () => { }, onSaveModal = () => { } }) => {
     const [form, setForm] = useState({
@@ -19,10 +21,12 @@ const ConsoleModal = ({ isOpen, onCloseModal = () => { }, onSaveModal = () => { 
             [name]: value
         }));
     }
+    const dispatch = useDispatch()
 
     const handleSubmit = (e) => {
         e.preventDefault();
         onSaveModal(form);
+        dispatch(addTask(form));
         setForm({
             toDo: "task",
             title: "",

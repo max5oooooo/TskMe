@@ -1,8 +1,11 @@
 import ConsoleContentBox from "../../components/shared/ConsoleContentBox"
 import useDictionary from "../../hook/useDictionary";
+import { useSelector } from "react-redux";
 
 const HomeConsole = ({ form }) => {
     const dictionary = useDictionary();
+    const tasks = useSelector((state) => (state.tasks))
+
     return (
 
         <>
@@ -43,21 +46,23 @@ const HomeConsole = ({ form }) => {
                                 </tr>
                             </thead>
                             <tbody className=" bg-white ">
+                                {tasks.map((task) => (
+
                                 <tr >
+                                    <td class="border border-secondary  ">{task.date}</td>
+                                    <td class="border border-secondary ">{task.title}</td>
+                                    <td class="border border-secondary "></td>
                                     <td class="border border-secondary  "></td>
-                                    <td class="border border-secondary "></td>
-                                    <td class="border border-secondary "></td>
-                                    <td class="border border-secondary  "></td>
-                                    <td class="border border-secondary "></td>
+                                    <td class="border border-secondary ">{task.time}</td>
                                     <td class="border border-secondary "></td>
                                     <td class="border border-secondary "></td>
                                     <td class="border border-secondary "></td>
                                     <td class="border border-secondary "></td>
-                                    <td class="border border-secondary "></td>
+                                    <td class="border border-secondary ">{task.priority}</td>
                                     <td class="border border-secondary "></td>
                                 </tr>
                                
-                                    
+                            ))}
                                
                             </tbody>
                         </table>
