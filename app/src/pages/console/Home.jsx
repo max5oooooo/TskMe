@@ -1,6 +1,7 @@
 import ConsoleContentBox from "../../components/shared/ConsoleContentBox"
 import useDictionary from "../../hook/useDictionary";
 import { useSelector } from "react-redux";
+import TimerButtons from "../../components/TimerButtons";
 
 const HomeConsole = ({ form }) => {
     const dictionary = useDictionary();
@@ -29,43 +30,46 @@ const HomeConsole = ({ form }) => {
                             </div>
                         </div>
                     </div>
-                        <table className="max-w-full border-separate border border-primary rounded-t-lg mt-3">
-                            <thead  >
-                                <tr className="border border-secondary rounded-t-lg bg-slate-100 font-thin">
-                                    <th class="border border-secondary font-thin...">{dictionary.TABELA_HOME.TASK_DAY}</th>
-                                    <th class="border border-secondary font-thin...">{dictionary.TABELA_HOME.TASK}</th>
-                                    <th class="border border-secondary font-thin...">{dictionary.TABELA_HOME.TASK_START}</th>
-                                    <th class="border border-secondary font-thin...">{dictionary.TABELA_HOME.TASK_FINISH}</th>
-                                    <th class="border border-secondary font-thin...">{dictionary.TABELA_HOME.TASK_DEADLINE}</th>
-                                    <th class="border border-secondary font-thin...">{dictionary.TABELA_HOME.TASK_BREAK}</th>
-                                    <th class="border border-secondary font-thin...">{dictionary.TABELA_HOME.TASK_TOTAL_TIME}</th>
-                                    <th class="border border-secondary ...">{dictionary.TABELA_HOME.TASK_COLABORATORS}</th>
-                                    <th class="border border-secondary ...">{dictionary.TABELA_HOME.TASK_STATUS}</th>
-                                    <th class="border border-secondary ...">{dictionary.TABELA_HOME.TASK_PRIORITY}</th>
-                                    <th class="border border-secondary ...">bottons</th>
+                        <table className="w-full table-fixed border-collapse border-spacing-1 mt-5">
+                            <thead className="" >
+                                <tr className="bg-slate-100">
+                                    <th class="border-2 border-primary">{dictionary.TABELA_HOME.TASK_DAY}</th>
+                                    <th class="border-2 border-primary">{dictionary.TABELA_HOME.TASK}</th>
+                                    <th class="border-2 border-primary">{dictionary.TABELA_HOME.TASK_START}</th>
+                                    <th class="border-2 border-primary">{dictionary.TABELA_HOME.TASK_FINISH}</th>
+                                    <th class="border-2 border-primary">{dictionary.TABELA_HOME.TASK_DEADLINE}</th>
+                                    <th class="border-2 border-primary">{dictionary.TABELA_HOME.TASK_BREAK}</th>
+                                    <th class="border-2 border-primary">{dictionary.TABELA_HOME.TASK_TOTAL_TIME}</th>
+                                    <th class="border-2 border-primary">{dictionary.TABELA_HOME.TASK_COLABORATORS}</th>
+                                    <th class="border-2 border-primary">{dictionary.TABELA_HOME.TASK_STATUS}</th>
+                                    <th class="border-2 border-primary">{dictionary.TABELA_HOME.TASK_PRIORITY}</th>
+                                    <th class="border-2 border-primary">bottons</th>
                                 </tr>
                             </thead>
                             <tbody className=" bg-white ">
                                 {tasks.map((task) => (
 
                                 <tr >
-                                    <td class="border border-secondary  ">{task.date}</td>
-                                    <td class="border border-secondary ">{task.title}</td>
-                                    <td class="border border-secondary "></td>
-                                    <td class="border border-secondary  "></td>
-                                    <td class="border border-secondary ">{task.time}</td>
-                                    <td class="border border-secondary "></td>
-                                    <td class="border border-secondary "></td>
-                                    <td class="border border-secondary "></td>
-                                    <td class="border border-secondary "></td>
-                                    <td class="border border-secondary ">{task.priority}</td>
-                                    <td class="border border-secondary "></td>
+                                    <td class="border border-slate-400">{task.date}</td>
+                                    <td class=" border border-slate-400">{task.title}</td>
+                                    <td class="border border-slate-400 "></td>
+                                    <td class=" border border-slate-400 "></td>
+                                    <td class=" border border-slate-400">{task.time}</td>
+                                    <td class="border border-slate-400"></td>
+                                    <td class="border border-slate-400"></td>
+                                    <td class="border border-slate-400"></td>
+                                    <td class="border border-slate-400"></td>
+                                    <td class="border border-slate-400">{task.priority}</td>
+                                    <td class="border border-slate-400">
+                                        
+                                    </td>
                                 </tr>
                                
                             ))}
                                
                             </tbody>
                         </table>
+                        < TimerButtons />
 
                     
                 </ConsoleContentBox>
