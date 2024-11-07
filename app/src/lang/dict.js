@@ -7,6 +7,10 @@ export default {
             SIDE_MENU_ANALYTICS: "Analisi Dati",
             SIDE_MENU_PROFILE: "Profilo",
         },
+        PROFILE: {
+            EMAIL: "Email",
+            TEL: "Telefono"
+        }
     },
     en: {
         HOME_CTA_TITLE: "Welcome on TskMe",
@@ -16,5 +20,9 @@ export default {
             SIDE_MENU_ANALYTICS: "Analytics",
             SIDE_MENU_PROFILE: "Profile",
         },
+        PROFILE: {
+            EMAIL: "Email",
+            TEL: "Telephone"
+        }
     }
 }
