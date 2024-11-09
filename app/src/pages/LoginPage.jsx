@@ -60,13 +60,6 @@ const LoginPage = () => {
                                 <label htmlFor="password" className="block text-sm font-medium text-black">Password</label>
                                 <input type="password" onInput={handleInput} value={form.password} id="password" name="password" className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300" required />
                             </div>
-                            <div className="mb-4 flex items-center">
-                                <input type="checkbox" id="remember" name="remember" className="text-black" />
-                                <label htmlFor="remember" className="text-black ml-2">{dictionary.LOGIN_REGISTER_PAGE.REMEMBER}</label>
-                            </div>
-                            <div className="mb-6 text-black">
-                                <Link to={"/"} className="hover:underline">{dictionary.LOGIN_REGISTER_PAGE.FORGOT}</Link>
-                            </div>
                             <div>
                                 <button type="submit" className="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800  focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">{dictionary.LOGIN_REGISTER_PAGE.LOG_IN}</button>
                             </div>
