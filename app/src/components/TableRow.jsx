@@ -121,7 +121,7 @@ const TableRow = ({task}) => {
             <td className="border-2 border-slate-400">{task.estimatedTime} </td>
             <td className="border-2 border-slate-400">{secondToTime(totalTime)}</td>
             <td className="border-2 border-slate-400">{overtime >= 0 ? secondToTime(overtime) : 'N/A'}</td>
-            <td className="border-2 border-slate-400"></td>
+            <td className="border-2 border-slate-400">{task.state}</td>
             <td className="border-2 border-slate-400">{task.priority}</td>
             <td className="border-2 border-slate-400">
                 <button onClick={toggleStartStop} disabled={isCompleted}>

@@ -8,7 +8,11 @@ const taskSlice = createSlice({
 
     reducers: {
         addTask: (state, action) => {
-            state.push(action.payload)
+            state.push({
+                ...action.payload, 
+                state:"pending",
+            })
+            
     },
 }
 })

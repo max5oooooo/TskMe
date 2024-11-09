@@ -10,6 +10,7 @@ const ConsoleModal = ({ isOpen, onCloseModal = () => { }, onSaveModal = () => { 
         description: "",
         priority: "low",
         estimatedTime: "",
+        state: "pending",
         creationDate: "",
     });
 
