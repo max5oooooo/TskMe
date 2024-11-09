@@ -19,7 +19,7 @@ const TableRow = ({task}) => {
 
     // Funzione per convertire l'orario (HH:MM) in secondi
     const timeToSeconds = (time) => {
-        const [hours, minutes, seconds] = time.split(':').map(Number);
+        const [hours, minutes, seconds = 0] = time.split(':').map(Number);
         return hours * 3600 + minutes * 60 + seconds;
     };
 
@@ -79,7 +79,7 @@ const TableRow = ({task}) => {
         setIsCompleted(true);
 
         // Calcola l'Overtime
-        const predefinedTimeInSeconds = timeToSeconds(predefinedTime);
+        const predefinedTimeInSeconds = timeToSeconds(task.estimatedTime);
         setOvertime(Math.max((startTime + breakTime) - predefinedTimeInSeconds, 0));
     };
 
@@ -114,11 +114,11 @@ const TableRow = ({task}) => {
     return (
 
         <tr className="text-sm text-gray-700 " >
-            <td className="border-2 border-slate-400">{task.date}</td>
-            <td className="border-2 border-slate-400">{task.toDo}</td>
+            <td className="border-2 border-slate-400">{task.creationDate}</td>
+            <td className="border-2 border-slate-400">{task.type}</td>
             <td className="border-2 border-slate-400">{secondToTime(startTime)}</td>
             <td className="border-2 border-slate-400">{secondToTime(breakTime)}</td>
-            <td className="border-2 border-slate-400">{task.time} </td>
+            <td className="border-2 border-slate-400">{task.estimatedTime} </td>
             <td className="border-2 border-slate-400">{secondToTime(totalTime)}</td>
             <td className="border-2 border-slate-400">{overtime >= 0 ? secondToTime(overtime) : 'N/A'}</td>
             <td className="border-2 border-slate-400"></td>
