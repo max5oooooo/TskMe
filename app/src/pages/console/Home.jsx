@@ -1,11 +1,10 @@
 import ConsoleContentBox from "../../components/shared/ConsoleContentBox"
 import useDictionary from "../../hook/useDictionary";
-import { useSelector } from "react-redux";
-import TimerButtons from "../../components/TimerButtons";
+import TaskTable from "../../components/TaskTable";
 
 const HomeConsole = ({ form }) => {
     const dictionary = useDictionary();
-    const tasks = useSelector((state) => (state.tasks))
+    
 
     return (
 
@@ -16,7 +15,7 @@ const HomeConsole = ({ form }) => {
             </div>
             <div>
                 <ConsoleContentBox>
-                        < TimerButtons />
+                        < TaskTable />
                 </ConsoleContentBox>
             </div>
         </>

@@ -4,14 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const taskSlice = createSlice({
     name: "tasks",
-    initialState : [{
-        toDo: "",
-        title: "",
-        message: "",
-        priority: "",
-        time: "",
-        date: ""//new Date(),
-    }],
+    initialState : [],
 
     reducers: {
         addTask: (state, action) => {
