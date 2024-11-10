@@ -9,13 +9,26 @@ const taskSlice = createSlice({
     reducers: {
         addTask: (state, action) => {
             state.push({
-                ...action.payload, 
+                ...action.payload,
+                id: Date.now(),
                 state:"pending",
             })
             
     },
+    startTask: (state, action) => {
+        const task = state.find(task => task.id === action.payload);
+        if (task) task.state = 'started';
+      },
+      pauseTask: (state, action) => {
+        const task = state.find(task => task.id === action.payload);
+        if (task) task.state = 'paused';
+      },
+      completeTask: (state, action) => {
+        const task = state.find(task => task.id === action.payload);
+        if (task) task.state = 'completed';
+      },
 }
 })
 
-export const { addTask  } = taskSlice.actions;
+export const { addTask, startTask, pauseTask, completeTask } = taskSlice.actions;
 export default taskSlice.reducer

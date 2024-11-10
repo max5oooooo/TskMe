@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { completeTask, pauseTask, startTask } from '../store/slices/taskSlice';
 
 const TableRow = ({task}) => {
     // Stati per i vari tempi
@@ -14,7 +16,8 @@ const TableRow = ({task}) => {
     const [startIntervalId, setStartIntervalId] = useState(null);
     const [breakIntervalId, setBreakIntervalId] = useState(null);
 
-
+    const dispatch = useDispatch();
+    
 
 
     // Funzione per convertire l'orario (HH:MM) in secondi
@@ -81,13 +84,17 @@ const TableRow = ({task}) => {
         // Calcola l'Overtime
         const predefinedTimeInSeconds = timeToSeconds(task.estimatedTime);
         setOvertime(Math.max((startTime + breakTime) - predefinedTimeInSeconds, 0));
+
+        dispatch(completeTask(task.id));
     };
 
     // Funzione per riavviare (toggle tra start e stop)
     const toggleStartStop = () => {
         if (isRunningStart) {
+            dispatch(pauseTask(task.id));
             stopStartTime();
         } else {
+            dispatch(startTask(task.id));
             startStartTime();
         }
     };
