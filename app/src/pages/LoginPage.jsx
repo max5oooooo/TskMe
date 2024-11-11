@@ -53,8 +53,8 @@ const LoginPage = () => {
                         <h1 className="text-3xl font-semibold mb-6 text-black text-center">{dictionary.LOGIN_REGISTER_PAGE.LOG_IN}</h1>
                         <form onSubmit={handleSubmit} className="space-y-4">
                             <div>
-                                <label htmlFor="first_name" className="block text-sm font-medium text-black">{dictionary.LOGIN_REGISTER_PAGE.FORM_NAME}</label>
-                                <input type="text" onInput={handleInput} value={form.first_name} id="first_name" name="first_name" className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300" required />
+                                <label htmlFor="email" className="block text-sm font-medium text-black">Email</label>
+                                <input type="email" onInput={handleInput} value={form.email} id="femail" name="email" className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300" required />
                             </div>
                             <div>
                                 <label htmlFor="password" className="block text-sm font-medium text-black">Password</label>
