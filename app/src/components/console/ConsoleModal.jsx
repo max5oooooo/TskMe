@@ -17,7 +17,7 @@ const ConsoleModal = ({ isOpen, onCloseModal = () => { }, onSaveModal = () => { 
         priority: "low",
         estimatedTime: "",
         state: "pending",
-        creationDate: creationDate,
+        creationDate: "",
     });
 
     
@@ -44,7 +44,7 @@ const ConsoleModal = ({ isOpen, onCloseModal = () => { }, onSaveModal = () => { 
             description: "",
             priority: "low",
             estimatedTime: "",
-            creationDate: creationDate,
+            creationDate: "",
         });
     }
 
