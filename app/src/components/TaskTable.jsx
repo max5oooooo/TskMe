@@ -17,9 +17,9 @@ const TaskTable = () => {
             <th className="border-2 bg-slate-100">{dictionary.TABELA_HOME.TASK}</th>
             <th className="border-2 bg-slate-100">{dictionary.TABELA_HOME.TASK_START}</th>
             <th className="border-2 bg-slate-100">{dictionary.TABELA_HOME.TASK_BREAK}</th>
-            <th className="border-2 bg-slate-100">{dictionary.TABELA_HOME.TASK_DEADLINE}</th>
+            <th className="border-2 bg-slate-100">{dictionary.TABELA_HOME.TASK_ESTIMATED}</th>
             <th className="border-2 bg-slate-100">{dictionary.TABELA_HOME.TASK_TOTAL_TIME}</th>
-            <th className="border-2 bg-slate-100">Overtime</th>
+            <th className="border-2 bg-slate-100">{dictionary.TABELA_HOME.TASK_OVERTIME}</th>
             {/*<th class="border-2 border-primary">{dictionary.TABELA_HOME.TASK_COLABORATORS}</th>*/}
             <th className="border-2 bg-slate-100">{dictionary.TABELA_HOME.TASK_STATUS}</th>
             <th className="border-2 bg-slate-100">{dictionary.TABELA_HOME.TASK_PRIORITY}</th>

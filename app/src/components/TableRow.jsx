@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { completeTask, pauseTask, startTask } from '../store/slices/taskSlice';
+import { completeTask, pauseTask, startTask, } from '../store/slices/taskSlice';
 
-const TableRow = ({task}) => {
+const TableRow = ({ task }) => {
     // Stati per i vari tempi
     const [startTime, setStartTime] = useState(0);
     const [breakTime, setBreakTime] = useState(0);
@@ -17,7 +17,7 @@ const TableRow = ({task}) => {
     const [breakIntervalId, setBreakIntervalId] = useState(null);
 
     const dispatch = useDispatch();
-    
+
 
 
     // Funzione per convertire l'orario (HH:MM) in secondi
@@ -120,7 +120,7 @@ const TableRow = ({task}) => {
 
     return (
 
-        <tr className="text-sm text-gray-700 " >
+        <tr className="text-sm text-gray-700  text-center" >
             <td className="border-2 border-slate-400">{task.creationDate}</td>
             <td className="border-2 border-slate-400">{task.type}</td>
             <td className="border-2 border-slate-400">{secondToTime(startTime)}</td>
@@ -131,15 +131,19 @@ const TableRow = ({task}) => {
             <td className="border-2 border-slate-400">{task.state}</td>
             <td className="border-2 border-slate-400">{task.priority}</td>
             <td className="border-2 border-slate-400">
-                <button onClick={toggleStartStop} disabled={isCompleted}>
-                    {isRunningStart ? 'Stop' : 'Start'}
-                </button>
-                <button onClick={complete} disabled={!isRunningStart && !isRunningBreak}>
-                    Complete
-                </button>
-                <button onClick={resetTimers}>
-                    Reset
-                </button>
+                <div className="flex flex-row  justify-self-center gap-3 m-1 ">
+                    <button onClick={toggleStartStop} disabled={isCompleted}>
+                        {isRunningStart ? (<i className="text-primary fa-solid fa-pause"></i>) : (<i class="text-primary fa-solid fa-play"></i>)}
+                    </button>
+                    <button onClick={complete} disabled={!isRunningStart && !isRunningBreak}>
+                        <i class=" text-primary fa-solid fa-check"></i>
+                    </button>
+
+                    <button onClick={resetTimers}>
+                    <i class="text-primary fa-solid fa-trash"></i>
+                    </button>
+                </div>
+
             </td>
         </tr>
     )

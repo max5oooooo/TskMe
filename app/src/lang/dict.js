@@ -8,18 +8,21 @@ export default {
             SIDE_MENU_PROFILE: "Profilo",
         },
         TABELA_HOME: {
-            RANGE_START: "Da",
-            RANGE_FINISH: "a",
             TASK_DAY: "Giorno",
-            TASK: "To Do",
-            TASK_START: "Inizio",
-            TASK_FINISH: "Finito",
-            TASK_DEADLINE: "Deadline",
+            TASK: "Da fare",
+            TASK_START: "Ora di inizio",
             TASK_BREAK: "Pausa",
-            TASK_TOTAL_TIME: "Tempo Totale",
-            TASK_COLABORATORS: "Collaboratori",
+            TASK_ESTIMATED: "Tempo previsto",
+            TASK_TOTAL_TIME: "Tempo totale",
+            TASK_OVERTIME: "Stra ordinario",
             TASK_STATUS: "Stato",
-            TASK_PRIORITY: "Priorità"
+            TASK_PRIORITY: "Priorità",
+            TASK_STATUS_PENDING: "Da fare",
+            TASK_STATUS_COMPLETED: "Fatto",
+            TASK_PRIORITY_LOW: "Basso",
+            TASK_PRIORITY_MED: "Medio",
+            TASK_PRIORITY_HIGH: "Alto",
+
         }
     },
     en: {
@@ -31,20 +34,20 @@ export default {
             SIDE_MENU_PROFILE: "Profile",
         },
         TABELA_HOME: {
-            RANGE_START: "From",
-            RANGE_FINISH: "TO",
             TASK_DAY: "Day",
             TASK: "To Do",
             TASK_START: "Start time",
-            TASK_FINISH: "Finish Time",
-            TASK_DEADLINE: "Deadline",
             TASK_BREAK: "Break",
+            TASK_ESTIMATED: "Estimated Time",
             TASK_TOTAL_TIME: "Total Time",
-            TASK_COLABORATORS: "Colaborators",
+            TASK_OVERTIME: "Over Time",
             TASK_STATUS: "Status",
-            TASK_PRIORITY: "Priority"
-
-
+            TASK_PRIORITY: "Priority",
+            TASK_STATUS_PENDING: "Pending",
+            TASK_STATUS_COMPLETED: "Completed",
+            TASK_PRIORITY_LOW: "Low",
+            TASK_PRIORITY_MED: "Medium",
+            TASK_PRIORITY_HIGH: "High",
         }
     }
 }

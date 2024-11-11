@@ -2,8 +2,14 @@ import { useState } from "react";
 import Modal from "../shared/Modal";
 import { useDispatch } from "react-redux";
 import { addTask } from "../../store/slices/taskSlice";
+import useDictionary from "../../hook/useDictionary";
+
+
+
 
 const ConsoleModal = ({ isOpen, onCloseModal = () => { }, onSaveModal = () => { } }) => {
+
+    
     const [form, setForm] = useState({
         type: "task",
         title: "",
@@ -11,8 +17,12 @@ const ConsoleModal = ({ isOpen, onCloseModal = () => { }, onSaveModal = () => { 
         priority: "low",
         estimatedTime: "",
         state: "pending",
-        creationDate: "",
+        creationDate: creationDate,
     });
+
+    
+
+    const dictionary = useDictionary()
 
     const handleInput = (e) => {
         const { name, value } = e.target;
@@ -34,7 +44,7 @@ const ConsoleModal = ({ isOpen, onCloseModal = () => { }, onSaveModal = () => { 
             description: "",
             priority: "low",
             estimatedTime: "",
-            creationDate: "",
+            creationDate: creationDate,
         });
     }
 
@@ -60,9 +70,9 @@ const ConsoleModal = ({ isOpen, onCloseModal = () => { }, onSaveModal = () => { 
                     <div className="relative z-0 m-4">
                         <label htmlFor="priority" className="block mb-2 text-sm font-medium text-gray-900 bg-transparent">Select a priority:</label>
                         <select id="priority" onChange={handleInput} value={form.priority} name="priority" className="w-40 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm font-medium border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
-                            <option value="low">Low</option>
-                            <option value="medium">Medium</option>
-                            <option value="high">High</option>
+                            <option value="low">{dictionary.TABELA_HOME.TASK_PRIORITY_LOW}</option>
+                            <option value="medium">{dictionary.TABELA_HOME.TASK_PRIORITY_MED}</option>
+                            <option value="high">{dictionary.TABELA_HOME.TASK_PRIORITY_HIGH}</option>
                         </select>
                     </div>
                     <div className="flex items-center justify-between">
