@@ -28,7 +28,9 @@ app.post("/token", async (req, res) => {
 
         const token = generateToken({ id: user._id, email: user.email, roles: user.roles });
 
-        return res.status(201).json({ token });
+        const { is_active, is_verified, password, ...userData } = user;
+
+        return res.status(201).json({ token, user: userData });
     } catch(err) {
         console.log(err);
         return res.status(500).json({ message: err.message });
