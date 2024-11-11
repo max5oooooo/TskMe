@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { completeTask, pauseTask, startTask, } from '../store/slices/taskSlice';
+import { completeTask, deleteTask, pauseTask, startTask, } from '../store/slices/taskSlice';
 
 const TableRow = ({ task }) => {
     // Stati per i vari tempi
@@ -99,16 +99,15 @@ const TableRow = ({ task }) => {
         }
     };
 
-    // Funzione per resettare tutto
-    const resetTimers = () => {
+    // Funzione per eliminare tutto
+    const deleteTaskHandler = () => {
         clearInterval(startIntervalId);
         clearInterval(breakIntervalId);
-        setStartTime(0);
-        setBreakTime(0);
-        setTotalTime(0);
-        setOvertime(0);
         setIsRunningStart(false);
         setIsRunningBreak(false);
+
+        // Rimuovi la task dallo store
+        dispatch(deleteTask(task.id));
     };
 
     useEffect(() => {
@@ -121,26 +120,25 @@ const TableRow = ({ task }) => {
     return (
 
         <tr className="text-sm text-gray-700  text-center" >
-            <td className="border-2 border-slate-400">{task.creationDate}</td>
-            <td className="border-2 border-slate-400">{task.type}</td>
-            <td className="border-2 border-slate-400">{secondToTime(startTime)}</td>
-            <td className="border-2 border-slate-400">{secondToTime(breakTime)}</td>
-            <td className="border-2 border-slate-400">{task.estimatedTime} </td>
-            <td className="border-2 border-slate-400">{secondToTime(totalTime)}</td>
-            <td className="border-2 border-slate-400">{overtime >= 0 ? secondToTime(overtime) : 'N/A'}</td>
-            <td className="border-2 border-slate-400">{task.state}</td>
-            <td className="border-2 border-slate-400">{task.priority}</td>
-            <td className="border-2 border-slate-400">
+            <td className="p-1 border-2 border-blue-gray-100 bg-blue-gray-50">{task.creationDate}</td>
+            <td className="p-1 border-2 border-blue-gray-100 bg-blue-gray-50">{task.type}</td>
+            <td className="p-1 border-2 border-blue-gray-100 bg-blue-gray-50">{secondToTime(startTime)}</td>
+            <td className="p-1 border-2 border-blue-gray-100 bg-blue-gray-50">{secondToTime(breakTime)}</td>
+            <td className="p-1 border-2 border-blue-gray-100 bg-blue-gray-50">{task.estimatedTime} </td>
+            <td className="p-1 border-2 border-blue-gray-100 bg-blue-gray-50">{secondToTime(totalTime)}</td>
+            <td className="p-1 border-2 border-blue-gray-100 bg-blue-gray-50">{overtime >= 0 ? secondToTime(overtime) : 'N/A'}</td>
+            <td className="p-1 border-2 border-blue-gray-100 bg-blue-gray-50">{task.state}</td>
+            <td className="p-1 border-2 border-blue-gray-100 bg-blue-gray-50">{task.priority}</td>
+            <td className="p-1 border-2 border-blue-gray-100 bg-blue-gray-50">
                 <div className="flex flex-row  justify-self-center gap-3 m-1 ">
                     <button onClick={toggleStartStop} disabled={isCompleted}>
                         {isRunningStart ? (<i className="text-primary fa-solid fa-pause"></i>) : (<i class="text-primary fa-solid fa-play"></i>)}
                     </button>
                     <button onClick={complete} disabled={!isRunningStart && !isRunningBreak}>
-                        <i class=" text-primary fa-solid fa-check"></i>
+                        <i className=" text-primary fa-solid fa-check"></i>
                     </button>
-
-                    <button onClick={resetTimers}>
-                    <i class="text-primary fa-solid fa-trash"></i>
+                    <button onClick={deleteTaskHandler}>
+                    <i className="text-primary fa-solid fa-trash"></i>
                     </button>
                 </div>
 

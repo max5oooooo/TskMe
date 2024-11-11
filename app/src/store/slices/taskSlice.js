@@ -28,11 +28,14 @@ const taskSlice = createSlice({
         const task = state.find(task => task.id === action.payload);
         if (task) task.state = 'completed';
       },
-      removeTask: (state, action) => {
-        return state.filter(task => task.id === action.payload);
+      deleteTask: (state, action) => {
+        const index = state.findIndex((task) => task.id === action.payload);
+        if (index !== -1) {
+          state.splice(index, 1); // Rimuove la task in modo immutabile
+        }
       },
 }
 })
 
-export const { addTask, startTask, pauseTask, completeTask, removeTask } = taskSlice.actions;
+export const { addTask, startTask, pauseTask, completeTask, deleteTask } = taskSlice.actions;
 export default taskSlice.reducer
