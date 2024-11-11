@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import svg from "../assets/img/LoginImg.svg";
 import { useState } from "react";
 import { login } from "../store/slices/authSlice";
+import { toast } from "react-toastify";
+import { SDK } from "../sdk";
 
 const LoginPage = () => {
     const dispatch = useDispatch();
@@ -11,7 +13,7 @@ const LoginPage = () => {
     const dictionary = useDictionary();
 
     const [form, setForm] = useState({
-        first_name: "",
+        email: "",
         password: "",
     });
     const handleInput = (e) => {
@@ -24,21 +26,23 @@ const LoginPage = () => {
     }
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        onSaveRegister(form);
-        setForm({
-            first_name: "",
-            password: "",
-        });
-    }
-    
-    const onSaveRegister = (form) => {
-        console.log(form)
-        dispatch(login({ token: "1234", user: { id: 1, first_name: "Giovanni", profile_image: null } }));
-        navigate("/console")
-      }
+        
+        try {
+            const data = await SDK.auth.login(form);
+            dispatch(login(data));
+            
+            setForm({
+                email: "",
+                password: "",
+            });
 
+            navigate("/console")
+        } catch (error) {
+            toast.error(error.message);
+        }
+    }
 
     return (
         <>
@@ -54,7 +58,7 @@ const LoginPage = () => {
                         <form onSubmit={handleSubmit} className="space-y-4">
                             <div>
                                 <label htmlFor="email" className="block text-sm font-medium text-black">Email</label>
-                                <input type="email" onInput={handleInput} value={form.email} id="femail" name="email" className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300" required />
+                                <input type="email" onInput={handleInput} value={form.email} id="email" name="email" className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300" required />
                             </div>
                             <div>
                                 <label htmlFor="password" className="block text-sm font-medium text-black">Password</label>

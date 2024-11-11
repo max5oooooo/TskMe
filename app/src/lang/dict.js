@@ -36,6 +36,9 @@ export default {
             REGISTER_HERE:"Iscriviti qui!",
             REMEMBER:"Ricordati",
         },
+        NOTIFICATIONS: {
+            REGISTER_SUCCESS: "Nuovo utente registrato, puoi procedere con il login",
+        },
     },
     en: {
         HOME_CTA_TITLE: "Welcome on TskMe",
@@ -72,6 +75,9 @@ export default {
             NOT_ACCOUNT:"Don't have an account?",
             REGISTER_HERE:"Sign up here!",
             REMEMBER:"Remember Me",
+        },
+        NOTIFICATIONS: {
+            REGISTER_SUCCESS: "New user registered, you can now login",
         },
     }
 }

@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../store/slices/authSlice";
 import useDictionary from "../hook/useDictionary";
+import { SDK } from "../sdk";
+import { toast } from "react-toastify";
 
 
 const RegisterPage = () => {
@@ -26,22 +28,26 @@ const RegisterPage = () => {
         }));
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        onSaveRegister(form);
-        setForm({
-            first_name: "",
-            last_name: "",
-            email: "",
-            password: "",
-        });
+        try {
+            await SDK.auth.register(form);
+            toast.success(dictionary.NOTIFICATIONS.REGISTER_SUCCESS);
+
+            setForm({
+                first_name: "",
+                last_name: "",
+                email: "",
+                password: "",
+            });
+
+            navigate("/login")
+        } catch (error) {
+            toast.error(error.message)
+        }
+        
     }
-    
-    const onSaveRegister = (form) => {
-        console.log(form)
-        dispatch(login({ token: "1234", user: { id: 1, first_name: "Giovanni", profile_image: null } }));
-        navigate("/console")
-      }
+
     return (
         <>
             <div className="flex h-screen">
