@@ -1,15 +1,12 @@
 import { useState } from "react";
 import svg from "../assets/img/RegisterImg.svg";
-import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { login } from "../store/slices/authSlice";
 import useDictionary from "../hook/useDictionary";
 import { SDK } from "../sdk";
 import { toast } from "react-toastify";
 
 
 const RegisterPage = () => {
-    const dispatch = useDispatch();
     const navigate = useNavigate();
     const dictionary = useDictionary();
     const [form, setForm] = useState({

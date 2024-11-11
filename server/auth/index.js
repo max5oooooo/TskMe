@@ -1,9 +1,8 @@
 const express = require("express");
 const app = express.Router();
 const Joi = require("joi");
-const bcrypt = require("bcryptjs");
 const { User } = require("../db");
-const { generateToken } = require("../utilities/auth");
+const { generateToken, comparePassword } = require("../utilities/auth");
 
 /**
  * @path /auth/token
@@ -22,7 +21,7 @@ app.post("/token", async (req, res) => {
 
         if (!user) return res.status(404).json({ message: "User Not Found" });
 
-        const is_valid_password = bcrypt.compareSync(data.password, user.password);
+        const is_valid_password = comparePassword(data.password, user.password);
 
         if (!is_valid_password) return res.status(404).json({ message: "User Not Found" });
 

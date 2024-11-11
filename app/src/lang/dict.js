@@ -38,6 +38,7 @@ export default {
         },
         NOTIFICATIONS: {
             REGISTER_SUCCESS: "Nuovo utente registrato, puoi procedere con il login",
+            USER_PROFILE_UPDATE_SUCCESS: "Informazioni del profilo modificate",
         },
         PROFILE: {
             TITLEPROFILE:"Profilo",
@@ -98,6 +99,7 @@ export default {
         },
         NOTIFICATIONS: {
             REGISTER_SUCCESS: "New user registered, you can now login",
+            USER_PROFILE_UPDATE_SUCCESS: "Profile informations updated",
         },
         PROFILE: {
             TITLEPROFILE:"Profile",
