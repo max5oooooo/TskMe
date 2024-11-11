@@ -11,6 +11,7 @@ const userSlice = createSlice({
         email: "",
         telefono: "",
         roles: "",
+        sex:"",
         birthday: ""
     },
     reducers: {
@@ -33,9 +34,12 @@ const userSlice = createSlice({
      updateTelefono(state, {payload} ) {
         state.telefono = payload;
      },
-     updateRoles(state, {payload} ) {
-        state.roles = payload;
-     },
+    updateRoles(state, {payload}) {
+      state.roles = payload
+    },
+     updateSex(state, {payload} ) {
+      state.sex = payload;
+   },
      updateBirthday(state, {payload} ) {
         state.birthday = payload;
      }
@@ -49,5 +53,7 @@ export const { updateEmail } = userSlice.actions;
 export const { updateTelefono } = userSlice.actions;
 export const { updateRoles} = userSlice.actions;
 export const { updateBirthday} = userSlice.actions;
+export const { updateSex} = userSlice.actions;
+
 
 export default userSlice.reducer;
