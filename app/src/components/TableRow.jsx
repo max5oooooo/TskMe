@@ -203,7 +203,7 @@ const TableRow = ({ task }) => {
     return (
 
         <tr className="text-sm text-gray-700  text-center" >
-            <td className="p-1 border-2 border-blue-gray-100 bg-blue-gray-50">{task.creationDate}</td>
+            <td className="p-1 border-2 border-blue-gray-100 bg-blue-gray-50">{new Date(task.creationDate).toLocaleDateString("it-IT")}</td>
             <td className="p-1 border-2 border-blue-gray-100 bg-blue-gray-50">{task.type}</td>
             <td className="p-1 border-2 border-blue-gray-100 bg-blue-gray-50">{secondToTime(startTime)}</td>
             <td className="p-1 border-2 border-blue-gray-100 bg-blue-gray-50">{secondToTime(breakTime)}</td>

@@ -1,6 +1,7 @@
 export default {
     it: {
         HOME_CTA_TITLE: "Benvenuti su TskMe",
+        HOME_CTA_P:"Tieni traccia di tutte le tue tasks",
         CONSOLE: {
             CREATE_BTN: "Crea",
             SIDE_MENU_DASHBOARD: "Dashboard",
@@ -80,6 +81,7 @@ export default {
     },
     en: {
         HOME_CTA_TITLE: "Welcome on TskMe",
+        HOME_CTA_P:"Check all your tasks",
         CONSOLE: {
             CREATE_BTN: "Create",
             SIDE_MENU_DASHBOARD: "Dashboard",

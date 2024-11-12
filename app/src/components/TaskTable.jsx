@@ -10,7 +10,7 @@ const TaskTable = () => {
     // Stato per la pagina corrente e numero di task per pagina
     const [currentPage, setCurrentPage] = useState(1);
     const [pageNumbers, setPageNumbers] = useState([1]); // Numero di task per pagina (puoi modificarlo)
-    const [tasksPerPage] = useState(2); // Numero di task per pagina (puoi modificarlo)
+    const [tasksPerPage] = useState(10); // Numero di task per pagina (puoi modificarlo)
     const [currentTasks, setCurrentTasks] = useState([]);
 
     // Funzione per cambiare pagina
