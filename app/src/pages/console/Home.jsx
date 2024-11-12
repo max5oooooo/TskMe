@@ -11,7 +11,7 @@ const HomeConsole = ({ form }) => {
         <>
             <div>
                 <h2 className="text-3xl font-bold">Dashboard</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p>{dictionary.HOME_CTA_P}</p>
             </div>
             <div>
                 <ConsoleContentBox>

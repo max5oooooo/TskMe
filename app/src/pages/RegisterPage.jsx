@@ -2,6 +2,8 @@ import { useState } from "react";
 import svg from "../assets/img/RegisterImg.svg";
 import { Link, useNavigate } from "react-router-dom";
 import useDictionary from "../hook/useDictionary";
+import { toast } from "react-toastify";
+import { SDK } from "../sdk";
 
 
 const RegisterPage = () => {
