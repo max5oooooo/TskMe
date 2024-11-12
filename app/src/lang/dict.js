@@ -59,6 +59,23 @@ export default {
             GENERALABOUTME: "Su di me",
             GENERALTEXT:"Assistente esecutivo con più di 10 anni di esperienza all'interno di una società globale di servizi finanziari, assistendo un team di tre dirigenti C-level. Esperto nell'organizzare trasferte aziendali, gestire note spese anche su ampia scala e ottimizzare la comunicazione tra i diversi reparti. Alla ricerca di un impiego in qualità di assistente esecutivo presso CVapp.it con l'obiettivo di proseguire la mia carriera manageriale e prosperare in un ambiente che richiede abilità di problem solving e capacità di resa sotto pressione.",
             BUTTON:"Salva"
+        },
+        TABELA_HOME: {
+            TASK_DAY: "Giorno",
+            TASK: "Da fare",
+            TASK_START: "Ora di inizio",
+            TASK_BREAK: "Pausa",
+            TASK_ESTIMATED: "Tempo previsto",
+            TASK_TOTAL_TIME: "Tempo totale",
+            TASK_OVERTIME: "Straordinario",
+            TASK_STATUS: "Stato",
+            TASK_PRIORITY: "Priorità",
+            TASK_STATUS_PENDING: "Da fare",
+            TASK_STATUS_COMPLETED: "Completato",
+            TASK_PRIORITY_LOW: "Basso",
+            TASK_PRIORITY_MED: "Medio",
+            TASK_PRIORITY_HIGH: "Alto",
+
         }
     },
     en: {
@@ -120,6 +137,22 @@ export default {
             GENERALABOUTME: "About Me",
             GENERALTEXT: "Executive Assistant with 10 + years of experience within a global financial services firm, assisting a team of three C- level executives.Experienced in arranging corporate travel, managing expense reports even on a large scale, and streamlining communication between different departments.Seeking a position as an Executive Assistant at CVapp.it with the goal of advancing my management career and thriving in an environment that requires problem solving skills and the ability to perform under pressure.",
             BUTTON:"Save"
+        },
+        TABELA_HOME: {
+            TASK_DAY: "Day",
+            TASK: "To Do",
+            TASK_START: "Start time",
+            TASK_BREAK: "Break",
+            TASK_ESTIMATED: "Estimated Time",
+            TASK_TOTAL_TIME: "Total Time",
+            TASK_OVERTIME: "Over Time",
+            TASK_STATUS: "Status",
+            TASK_PRIORITY: "Priority",
+            TASK_STATUS_PENDING: "Pending",
+            TASK_STATUS_COMPLETED: "Completed",
+            TASK_PRIORITY_LOW: "Low",
+            TASK_PRIORITY_MED: "Medium",
+            TASK_PRIORITY_HIGH: "High",
         }
     }
 }
