@@ -15,7 +15,7 @@ const HomeConsole = ({ form }) => {
             </div>
             <div>
                 <ConsoleContentBox>
-                        < TaskTable />
+                    <TaskTable />
                 </ConsoleContentBox>
             </div>
         </>
