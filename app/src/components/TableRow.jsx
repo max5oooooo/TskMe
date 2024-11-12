@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { completeTask, deleteTask, pauseTask, startTask, } from '../store/slices/taskSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { completeTask, deleteTask, pauseTask, startCurrentTask, startTask, updateCurrentTask, } from '../store/slices/taskSlice';
 
 const TableRow = ({ task }) => {
+    const currentTasks = useSelector((state) => state.tasks.current);
     // Stati per i vari tempi
     const [startTime, setStartTime] = useState(0);
     const [breakTime, setBreakTime] = useState(0);
@@ -17,8 +18,6 @@ const TableRow = ({ task }) => {
     const [breakIntervalId, setBreakIntervalId] = useState(null);
 
     const dispatch = useDispatch();
-
-
 
     // Funzione per convertire l'orario (HH:MM) in secondi
     const timeToSeconds = (time) => {
@@ -56,6 +55,16 @@ const TableRow = ({ task }) => {
             }, 1000); // Incrementa ogni secondo
             setStartIntervalId(id);
             setIsRunningStart(true);
+
+            // Start per il current task su redux
+            dispatch(startCurrentTask({
+                ...task,
+                state: "started",
+                startTime,
+                breakTime,
+                totalTime,
+                overtime,
+            }));
         }
     };
 
@@ -70,6 +79,16 @@ const TableRow = ({ task }) => {
         }, 1000);
         setBreakIntervalId(id);
         setIsRunningBreak(true);
+
+        // Stop per il current task su redux
+        dispatch(startCurrentTask({
+            ...task,
+            state: "paused",
+            startTime,
+            breakTime,
+            totalTime,
+            overtime,
+        }));
     };
 
     // Funzione per fermare entrambi i timer e calcolare il Total Time
@@ -86,6 +105,16 @@ const TableRow = ({ task }) => {
         setOvertime(Math.max((startTime + breakTime) - predefinedTimeInSeconds, 0));
 
         dispatch(completeTask(task.id));
+
+        // Copleted per il current task su redux
+        dispatch(startCurrentTask({
+            ...task,
+            state: "completed",
+            startTime,
+            breakTime,
+            totalTime,
+            overtime,
+        }));
     };
 
     // Funzione per riavviare (toggle tra start e stop)
@@ -93,9 +122,29 @@ const TableRow = ({ task }) => {
         if (isRunningStart) {
             dispatch(pauseTask(task.id));
             stopStartTime();
+
+            // Pause per il current task su redux
+            dispatch(startCurrentTask({
+                ...task,
+                state: "paused",
+                startTime,
+                breakTime,
+                totalTime,
+                overtime,
+            }));
         } else {
             dispatch(startTask(task.id));
             startStartTime();
+
+            // Start per il current task su redux
+            dispatch(startCurrentTask({
+                ...task,
+                state: "started",
+                startTime,
+                breakTime,
+                totalTime,
+                overtime,
+            }));
         }
     };
 
@@ -117,6 +166,40 @@ const TableRow = ({ task }) => {
         };
     }, [startIntervalId, breakIntervalId]);
 
+    useEffect(() => {
+        dispatch(updateCurrentTask({
+            ...task,
+            startTime,
+            breakTime,
+            totalTime,
+            overtime,
+        }))
+    }, [startTime, breakTime, totalTime, overtime]);
+
+    useEffect(() => {
+        const current = currentTasks.find((c) => c.id == task.id)
+        if (current) {
+            setStartTime(current.startTime);
+            setBreakTime(current.breakTime);
+            setTotalTime(current.totalTime);
+            setOvertime(current.overtime);
+            if (task.state === "started") {
+                startStartTime();
+            } else if(task.state === "paused") {
+                stopStartTime();
+            } else if (task.state === "completed") {
+                dispatch(updateCurrentTask({
+                    ...task,
+                    status: "completed",
+                    startTime,
+                    breakTime,
+                    totalTime,
+                    overtime,
+                }))
+            }
+        }
+    }, []);
+
     return (
 
         <tr className="text-sm text-gray-700  text-center" >
@@ -132,13 +215,13 @@ const TableRow = ({ task }) => {
             <td className="p-1 border-2 border-blue-gray-100 bg-blue-gray-50">
                 <div className="flex flex-row  justify-self-center gap-3 m-1 ">
                     <button onClick={toggleStartStop} disabled={isCompleted}>
-                        {isRunningStart ? (<i className="text-primary fa-solid fa-pause"></i>) : (<i class="text-primary fa-solid fa-play"></i>)}
+                        {isRunningStart ? (<i className="text-primary fa-solid fa-pause"></i>) : (<i className="text-primary fa-solid fa-play"></i>)}
                     </button>
                     <button onClick={complete} disabled={!isRunningStart && !isRunningBreak}>
                         <i className=" text-primary fa-solid fa-check"></i>
                     </button>
                     <button onClick={deleteTaskHandler}>
-                    <i className="text-primary fa-solid fa-trash"></i>
+                        <i className="text-primary fa-solid fa-trash"></i>
                     </button>
                 </div>
 
