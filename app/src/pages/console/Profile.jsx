@@ -19,12 +19,13 @@ const ProfileConsole = () => {
     });
 
     const handleInput = (e) => {
-        const { name, value } = e.target;
+        const { name, value } = e.target; 
 
         setForm((form) => ({
             ...form,
             [name]: value
         }))
+        
     }
 
     const handleSubmit = async (e) => {
