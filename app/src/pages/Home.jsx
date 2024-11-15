@@ -19,9 +19,7 @@ const Home = () => {
     <>
       {/* Navbar */}
       <nav className="flex justify-between items-center p-6 bg-[#111827] text-white">
-        <h1 className="text-2xl font-semibold text-primary">{dictionary.HOME_CTA_TITLE}</h1>
-
-
+        <h1 className="text-2xl font-semibold text-primary"><i class="fa-regular fa-lemon" stroke="#40916C" aria-hidden="true"></i>TSK Me</h1>
 
         <div className="flex space-x-6">
           {/* Links per le sezioni */}
