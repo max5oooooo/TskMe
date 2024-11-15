@@ -7,14 +7,12 @@ const RootLayout = () => {
 
     return (
         <>
-            <nav>
-                <Link to="/console/profile">Profile</Link>
-                <SwitchLanguage />
-            </nav>
+            <nav></nav>
             <Outlet />
             <footer className="bg-[#111827] text-white text-center py-8">
                 <p>&copy; 2024 TskMe. All rights reserved.</p>
                 <p>{dictionary.HOME_FOOTER_TEXT}</p>
+                <SwitchLanguage />
             </footer>
 
         </>

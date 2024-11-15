@@ -2,21 +2,7 @@ import { useDispatch } from "react-redux";
 import useDictionary from "../hook/useDictionary";
 import { login } from "../store/slices/authSlice";
 import { Link, useNavigate } from "react-router-dom";
-
-/**
- * 
- * 1. Logo
- * 2. Navbar: register, login page, link per le sezioni, selezione lingua
- * 3. Header: TskMe - Task manager for every one (task manager per tutti) + titolo di ora nel sottotitolo, il tutto 
- * messo sulla sx, a dx screen app
- * 4. Icone nella sezione 'caratteristiche principali' + cambia testo della terza (Facile da usare)
- * 5. Sezione cosa è TskMe: testo a sx nero (tranne titolo) + sfondo bianco, a sx foto app
- * 6. Cambia sezione finali, non benvenuto
- * 7. Sezione a cascata alternata:
- *     'How it works?' + foto app
- *     'Controlla le tue analytics'
- * 8. 
-  */
+import { animateScroll as scroll } from "react-scroll";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -35,22 +21,24 @@ const Home = () => {
       <nav className="flex justify-between items-center p-6 bg-[#111827] text-white">
         <h1 className="text-2xl font-semibold text-primary">{dictionary.HOME_CTA_TITLE}</h1>
 
+
+
         <div className="flex space-x-6">
           {/* Links per le sezioni */}
-          <Link to="#hero" className="hover:text-[#40916C] transition duration-300">
-            Hero Section
+          <Link to="/console/profile">
+            Profile
           </Link>
-          <Link to="#features" className="hover:text-[#40916C] transition duration-300">
+          <Link to="#features" smooth duration={500} className="hover:text-[#40916C] transition duration-300">
             Features Section
           </Link>
-          <Link to="#about" className="hover:text-[#40916C] transition duration-300">
+          <Link to="#about" smooth duration={500} className="hover:text-[#40916C] transition duration-300">
             About Section
           </Link>
-          <Link to="#cta" className="hover:text-[#40916C] transition duration-300">
+          <Link to="#cta" smooth duration={500} className="hover:text-[#40916C] transition duration-300">
             Call to Action
           </Link>
 
-          {/* Link per Login/Register */}
+          {/* Link per Register */}
           <Link to="/register" className="hover:text-[#40916C] transition duration-300">
             Register
           </Link>
@@ -64,23 +52,69 @@ const Home = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="#hero" className="bg-primary text-white py-16 flex items-center">
-        <div className="flex-1 px-8">
+      <section className="bg-primary text-white py-16 px-6 md:px-16 flex items-center">
+        <div className="flex-1 px-8 max-w-lg mx-auto">
           <h2 className="text-4xl font-semibold">{dictionary.HOME_HERO_TITLE}</h2>
           <p className="mt-4 text-xl">{dictionary.HOME_HERO_SUBTITLE}</p>
           <button
             onClick={handleLogin}
-            className="mt-8 px-8 py-3 bg-white text-primary rounded-lg hover:bg-gray-100 transition duration-300"
+            className="mt-8 px-8 py-3 bg-white text-primary rounded-lg hover:bg-gray-100 transition duration-300 block mx-auto"
           >
             {dictionary.HOME_HERO_CTA_BUTTON}
           </button>
         </div>
         <div className="flex-1">
           {/* Qui puoi inserire la tua immagine */}
-          <img src="path-to-your-image.jpg" alt="Hero Image" className="w-full h-auto object-cover" />
+          <img
+            src="https://images.ctfassets.net/xjcz23wx147q/2oiMdOggDxqcAwWPBbWrOZ/bebd506e5bcf49b163efca81049729be/pm-marketing-hero.webp"
+            alt="Hero Image"
+            className="w-full h-auto object-cover"
+          />
         </div>
       </section>
 
+      {/* About Section */}
+      <section id="#about" className="py-16 bg-white text-center">
+        <h2 className="text-3xl font-semibold text-primary">{dictionary.HOME_ABOUT_TITLE}</h2>
+        <p className="mt-4 text-lg text-primary">{dictionary.HOME_ABOUT_SUBTITLE}</p>
+        <div className="mt-8 px-4 max-w-3xl mx-auto shadow-md rounded-lg p-4">
+          <p className="text-lg text-black">{dictionary.HOME_ABOUT_BODY_1}</p>
+          <p className="mt-4 text-lg text-black">{dictionary.HOME_ABOUT_BODY_2}</p>
+          <p className="mt-4 text-lg text-black">{dictionary.HOME_ABOUT_BODY_3}</p>
+        </div>
+      </section>
+
+      <div className="w-full my-6 h-[1px] bg-[#40916C]"></div>
+
+      {/* Sezione Come Funziona (Cascata alternata) */}
+      <section className="py-16 bg-white text-center">
+        <h2 className="text-3xl font-semibold text-primary">{dictionary.HOME_HDIW_TITLE}</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 px-4">
+          {/* Prima colonna: Titolo e descrizione */}
+          <div className="flex flex-col justify-center items-start space-y-4 min-h-[400px]">
+            <p className="text-lg text-black">{dictionary.HOME_HDIW_BODY}</p>
+          </div>
+          {/* Seconda colonna: Foto dell'app */}
+          <div className="flex justify-center items-center min-h-[400px]">
+            <img src="path-to-your-app-image.jpg" alt="App Screenshot" className="w-full h-auto object-cover max-w-lg" />
+          </div>
+        </div>
+      </section>
+
+      {/* Sezione Analytics */}
+      <section className="py-16 bg-[#B7E4C7] text-center">
+        <h2 className="text-3xl font-semibold text-primary">{dictionary.HOME_ANALYTICS_TITLE}</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 px-4">
+          {/* Prima colonna: Foto */}
+          <div className="flex justify-center items-center min-h-[400px]">
+            <img src="path-to-your-analytics-image.jpg" alt="Analytics Screenshot" className="w-full h-auto object-cover max-w-lg" />
+          </div>
+          {/* Seconda colonna: Descrizione */}
+          <div className="flex flex-col justify-center items-start space-y-4 min-h-[400px]">
+            <p className="text-lg text-black">{dictionary.HOME_ANALYTICS_BODY}</p>
+          </div>
+        </div>
+      </section>
       {/* Features Section */}
       <section id="#features" className="py-16 bg-white text-center">
         <h2 className="text-3xl font-semibold text-primary">{dictionary.HOME_FEATURES_TITLE}</h2>
@@ -133,17 +167,6 @@ const Home = () => {
             <h3 className="text-2xl font-semibold text-primary">{dictionary.HOME_FEATURE_3_TITLE}</h3>
             <p>{dictionary.HOME_FEATURE_3_DESCRIPTION}</p>
           </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="#about" className="py-16 bg-white text-center">
-        <h2 className="text-3xl font-semibold text-primary">{dictionary.HOME_ABOUT_TITLE}</h2>
-        <p className="mt-4 text-lg text-primary">{dictionary.HOME_ABOUT_SUBTITLE}</p>
-        <div className="mt-8 px-4 max-w-3xl mx-auto shadow-md rounded-lg p-4">
-          <p className="text-lg text-black">{dictionary.HOME_ABOUT_BODY_1}</p>
-          <p className="mt-4 text-lg text-black">{dictionary.HOME_ABOUT_BODY_2}</p>
-          <p className="mt-4 text-lg text-black">{dictionary.HOME_ABOUT_BODY_3}</p>
         </div>
       </section>
 

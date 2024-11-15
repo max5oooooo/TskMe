@@ -16,6 +16,10 @@ export default {
       HOME_CTA_SECTION_TITLE: "Pronto a fare il passo successivo?",
       HOME_CTA_SECTION_DESCRIPTION: "Accedi oggi stesso e inizia a utilizzare tutte le nostre funzionalità.",
       HOME_FOOTER_TEXT: "Tutti i diritti riservati",
+      HOME_HDIW_TITLE: "Come funziona?",
+      HOME_HDIW_BODY: "Con la nostra applicazione, hai a disposizione un calendario interattivo che ti consente di organizzare e gestire facilmente le tue attività quotidiane. Puoi aggiungere task, monitorare il loro stato, mettere in pausa, assegnare priorità e stabilire urgenze, tutto in pochi semplici passi. La nostra interfaccia intuitiva ti aiuterà a restare produttivo, rendendo la gestione del tuo tempo più semplice e meno stressante.",
+      HOME_ANALYTICS_TITLE: "Analytics",
+      HOME_ANALYTICS_BODY: "Con la nostra app, avrai accesso a una sezione dedicata all'analisi dei tuoi dati. Potrai visualizzare in tempo reale le performance delle tue attività, comprendere il tuo andamento e ottimizzare il tuo lavoro con report dettagliati. Le analytics sono uno strumento potente per prendere decisioni informate e migliorare continuamente la tua produttività.",
       CONSOLE: {
         CREATE_BTN: "Crea",
         SIDE_MENU_DASHBOARD: "Dashboard",
@@ -44,6 +48,10 @@ export default {
       HOME_CTA_SECTION_TITLE: "Ready to take the next step?",
       HOME_CTA_SECTION_DESCRIPTION: "Log in today and start using all our features.",
       HOME_FOOTER_TEXT: "All rights reserved",
+      HOME_HDIW_TITLE: "How does it work?",
+      HOME_HDIW_BODY: "With our application, you have access to an interactive calendar that allows you to easily organize and manage your daily tasks. You can add tasks, track their status, pause them, assign priorities, and set urgencies, all in just a few simple steps. Our intuitive interface will help you stay productive, making time management simpler and less stressful.",
+      HOME_ANALYTICS_TITLE: "Analytics",
+      HOME_ANALYTICS_BODY: "With our app, you'll have access to a section dedicated to analyzing your data. You can view the real-time performance of your activities, understand your progress, and optimize your work with detailed reports. Analytics are a powerful tool for making informed decisions and continuously improving your productivity.",
       CONSOLE: {
         CREATE_BTN: "Create",
         SIDE_MENU_DASHBOARD: "Dashboard",
