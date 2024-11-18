@@ -41,6 +41,17 @@ export default {
             REGISTER_SUCCESS: "Nuovo utente registrato, puoi procedere con il login",
             USER_PROFILE_UPDATE_SUCCESS: "Informazioni del profilo modificate",
         },
+        ANALITYCS:{
+            ANALITYCS:"Analisi Dati",
+            SUBTITLE:"Grazie ai dati raccolti, puoi prendere decisioni informate per migliorare l'esperienza utente e massimizzare i risultati.",
+            ANNUALY:"Tutto l'anno",
+            FIRSTSEMESTER:"Primo semestre",
+            SECONDSEMESTER:"Secondo semestre",
+            FIRSTQUARTER:"Primo trimestre",
+            SECONDQUARTER:"Secondo trimestre",
+            THIRDQUARTER:"Terzo trimestre",
+            FOURTHQUARTER:"Quarto trimestre",
+        },
         PROFILE: {
             TITLEPROFILE:"Profilo",
             SUBTITLE:"Questo è il mio profilo personale",
@@ -119,6 +130,17 @@ export default {
         NOTIFICATIONS: {
             REGISTER_SUCCESS: "New user registered, you can now login",
             USER_PROFILE_UPDATE_SUCCESS: "Profile informations updated",
+        },
+        ANALITYCS:{
+            ANALITYCS:"Analitycs",
+            SUBTITLE:"Thanks to the data collected, you can make informed decisions to improve the user experience and maximize results.",
+            ANNUALY:"All year",
+            FIRSTSEMESTER:"First semester",
+            SECONDSEMESTER:"Second semester",
+            FIRSTQUARTER:"First quarter",
+            SECONDQUARTER:"Second quarter",
+            THIRDQUARTER:"Third quarter",
+            FOURTHQUARTER:"Fourth quarter",
         },
         PROFILE: {
             TITLEPROFILE:"Profile",

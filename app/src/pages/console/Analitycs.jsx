@@ -1,15 +1,19 @@
-import ConsoleContentBox from "../../components/shared/ConsoleContentBox"
+import AnalitycsGraphic from "../../components/AnalitycsGraphic";
+import ConsoleContentBox from "../../components/shared/ConsoleContentBox";
+import useDictionary from "../../hook/useDictionary";
 
 const AnalitycsConsole = () => {
+    const dictionary = useDictionary();
+
     return (
         <>
         <div>
-            <h2 className="text-3xl font-bold">Analitycs</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <h2 className="text-3xl font-bold">{dictionary.ANALITYCS.ANALITYCS}</h2>
+            <p>{dictionary.ANALITYCS.SUBTITLE}</p>
         </div>
         <div>
             <ConsoleContentBox>
-                <table></table>
+                <AnalitycsGraphic/>
             </ConsoleContentBox>
         </div>
         </>
