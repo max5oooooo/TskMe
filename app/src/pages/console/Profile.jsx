@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ConsoleContentBox from "../../components/shared/ConsoleContentBox";
 import useDictionary from "../../hook/useDictionary";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
 import { SDK } from "../../sdk";
 import { useDispatch, useSelector } from "react-redux";
 import { updateUser } from "../../store/slices/authSlice";
@@ -19,12 +19,13 @@ const ProfileConsole = () => {
     });
 
     const handleInput = (e) => {
-        const { name, value } = e.target;
+        const { name, value } = e.target; 
 
         setForm((form) => ({
             ...form,
             [name]: value
         }))
+        
     }
 
     const handleSubmit = async (e) => {
