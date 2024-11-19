@@ -3,6 +3,12 @@ import useDictionary from "../hook/useDictionary";
 import { login } from "../store/slices/authSlice";
 import { Link, useNavigate } from "react-router-dom";
 import { animateScroll as scroll } from "react-scroll";
+import SwitchLanguage from "../components/shared/SwitchLanguage";
+
+/**
+ * 
+ * 
+ */
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -18,14 +24,11 @@ const Home = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className="flex justify-between items-center p-6 bg-[#111827] text-white">
-        <h1 className="text-2xl font-semibold text-primary"><i class="fa-regular fa-lemon" stroke="#40916C" aria-hidden="true"></i>TSK Me</h1>
+      <nav className="flex justify-between items-center p-6 bg-white text-black">
+        <h1 className="text-2xl font-semibold text-primary"><i class="fa-regular fa-lemon" aria-hidden="true"></i>TSK Me</h1>
 
         <div className="flex space-x-6">
           {/* Links per le sezioni */}
-          <Link to="/console/profile">
-            Profile
-          </Link>
           <Link to="#features" smooth duration={500} className="hover:text-[#40916C] transition duration-300">
             Features Section
           </Link>
@@ -36,17 +39,23 @@ const Home = () => {
             Call to Action
           </Link>
 
-          {/* Link per Register */}
-          <Link to="/register" className="hover:text-[#40916C] transition duration-300">
-            Register
-          </Link>
         </div>
-        <button
-          onClick={handleLogin}
-          className="px-6 py-2 bg-[#40916C] rounded-lg text-white hover:bg-btn-medium transition duration-300"
-        >
-          {dictionary.HOME_CTA_BUTTON}
-        </button>
+        <div className="flex gap-1">
+          <button
+            onClick={handleLogin}
+            className="rounded-full border border-slate-100 shadow p-3 px-5 items-center cursor-pointer bg-primary text-white"
+          >
+            {dictionary.HOME_CTA_BUTTON}
+          </button>
+          <button
+            onClick={handleLogin}
+            className="rounded-full border border-slate-100 shadow p-3 px-5 items-center cursor-pointer bg-primary text-white"
+          >
+            Registrati
+          </button>
+          <SwitchLanguage />
+        </div>
+
       </nav>
 
       {/* Hero Section */}
@@ -56,7 +65,7 @@ const Home = () => {
           <p className="mt-4 text-xl">{dictionary.HOME_HERO_SUBTITLE}</p>
           <button
             onClick={handleLogin}
-            className="mt-8 px-8 py-3 bg-white text-primary rounded-lg hover:bg-gray-100 transition duration-300 block mx-auto"
+            className="mt-8 px-8 py-3 rounded-full border border-slate-100 shadow items-center cursor-pointer bg-white text-primary block mx-auto"
           >
             {dictionary.HOME_HERO_CTA_BUTTON}
           </button>
@@ -75,14 +84,12 @@ const Home = () => {
       <section id="#about" className="py-16 bg-white text-center">
         <h2 className="text-3xl font-semibold text-primary">{dictionary.HOME_ABOUT_TITLE}</h2>
         <p className="mt-4 text-lg text-primary">{dictionary.HOME_ABOUT_SUBTITLE}</p>
-        <div className="mt-8 px-4 max-w-3xl mx-auto shadow-md rounded-lg p-4">
+        <div className="mt-8 px-4 max-w-3xl mx-auto p-4 font-bold">
           <p className="text-lg text-black">{dictionary.HOME_ABOUT_BODY_1}</p>
           <p className="mt-4 text-lg text-black">{dictionary.HOME_ABOUT_BODY_2}</p>
           <p className="mt-4 text-lg text-black">{dictionary.HOME_ABOUT_BODY_3}</p>
         </div>
       </section>
-
-      <div className="w-full my-6 h-[1px] bg-[#40916C]"></div>
 
       {/* Sezione Come Funziona (Cascata alternata) */}
       <section className="py-16 bg-white text-center">
@@ -172,12 +179,21 @@ const Home = () => {
       <section id="#cta" className="bg-primary text-white text-center py-16">
         <h2 className="text-3xl font-semibold">{dictionary.HOME_HERO_CTA_BUTTON}</h2>
         <p className="mt-4">{dictionary.HOME_CTA_DESCRIPTION}</p>
-        <button
-          onClick={handleLogin}
-          className="mt-8 px-8 py-3 bg-[#111827] text-white rounded-lg hover:bg-gray-100 transition duration-300"
-        >
-          {dictionary.HOME_CTA_BUTTON}
-        </button>
+        <div className="flex justify-center align-center gap-2">
+          <button
+            onClick={handleLogin}
+            className="rounded-full border border-slate-100 mt-8 px-8 py-3 shadow cursor-pointer bg-white text-primary"
+          >
+            {dictionary.HOME_CTA_BUTTON}
+          </button>
+          <button
+            onClick={handleLogin}
+            className="mt-8 px-8 py-3 rounded-full border border-slate-100 shadow cursor-pointer bg-white text-primary"
+          >
+            Registrati
+          </button>
+        </div>
+
       </section>
     </>
   );

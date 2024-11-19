@@ -9,9 +9,8 @@ const RootLayout = () => {
         <>
             <nav></nav>
             <Outlet />
-            <footer className="bg-[#111827] text-white text-center py-8">
-                <p>&copy; 2024 TskMe. All rights reserved.</p>
-                <p>{dictionary.HOME_FOOTER_TEXT}</p>
+            <footer className="bg-white text-black text-center py-8 flex justify-between align-center mx-4">
+                    <p>&copy; 2024 TskMe. All rights reserved.{dictionary.HOME_FOOTER_TEXT}</p>
                 <SwitchLanguage />
             </footer>
 
