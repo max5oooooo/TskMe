@@ -66,14 +66,17 @@ const Sidebar = () => {
                     </div>
                 </div>
                 <div className="p-4">
-                    <div className="flex gap-2 items-center justify-between">
-                        <Link to="/console/profile" className="flex gap-2 items-center">
-                            <ProfileImagePlaceholder src={user.profile_image} alt="User profile image" />
-                            <span>{user.first_name}</span>
-                        </Link>
-                        <SwitchLanguage />
-                        <span>|</span>
-                        <LogoutButton />
+                    <div className="flex flex-col gap-2 items-center justify-center">
+                        <div className="w-full flex justify-between">
+                            <Link to="/console/profile" className="flex gap-2 items-center">
+                                <ProfileImagePlaceholder src={user.profile_image} alt="User profile image" />
+                                <span>{user.first_name}</span>
+                            </Link>
+                            <LogoutButton />
+                        </div>
+                        <div className="flex justify-end gap-2 w-full">
+                            <SwitchLanguage />
+                        </div>
                     </div>
                 </div>
             </div>

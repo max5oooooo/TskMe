@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ConsoleContentBox from "../../components/shared/ConsoleContentBox";
 import useDictionary from "../../hook/useDictionary";
-//import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { SDK } from "../../sdk";
 import { useDispatch, useSelector } from "react-redux";
 import { updateUser } from "../../store/slices/authSlice";
@@ -35,7 +35,7 @@ const ProfileConsole = () => {
             await SDK.users.updateProfile(form, auth.token);
             const { password, ...userUpdated } = form;
             dispatch(updateUser(userUpdated));
-            toast.success(dictionary.NOTIFICATIONS.USER_PROFILE_UPDATE_SUCCESS)
+            toast.success(dictionary.NOTIFICATIONS.USER_PROFILE_UPDATE_SUCCESS);
         } catch (error) {
             console.log(error);
             toast.error(error.message)

@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import svg from "../assets/img/LoginImg.svg";
 import { useState } from "react";
 import { login } from "../store/slices/authSlice";
-//import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { SDK } from "../sdk";
 
 const LoginPage = () => {
@@ -24,7 +24,6 @@ const LoginPage = () => {
             [name]: value
         }));
     }
-
 
     const handleSubmit = async (e) => {
         e.preventDefault();

@@ -8,8 +8,6 @@ const { verifyToken } = require("../utilities/auth");
 const authUser = (roles = ["owner"]) => async (req, res, next) => {
     const bearer = req.headers.authorization || req.headers["Authorization"] || false;
 
-    console.log(bearer)
-
     if (!bearer) return res.status(401).json({ message: "User not authorize" });
 
     const token = bearer.replace("Bearer ", "");

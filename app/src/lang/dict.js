@@ -109,11 +109,6 @@ export default {
         HOME_HDIW_BODY: "Con la nostra applicazione, hai a disposizione un calendario interattivo che ti consente di organizzare e gestire facilmente le tue attività quotidiane. Puoi aggiungere task, monitorare il loro stato, mettere in pausa, assegnare priorità e stabilire urgenze, tutto in pochi semplici passi. La nostra interfaccia intuitiva ti aiuterà a restare produttivo, rendendo la gestione del tuo tempo più semplice e meno stressante.",
         HOME_ANALYTICS_TITLE: "Analytics",
         HOME_ANALYTICS_BODY: "Con la nostra app, avrai accesso a una sezione dedicata all'analisi dei tuoi dati. Potrai visualizzare in tempo reale le performance delle tue attività, comprendere il tuo andamento e ottimizzare il tuo lavoro con report dettagliati. Le analytics sono uno strumento potente per prendere decisioni informate e migliorare continuamente la tua produttività.",
-        CONSOLE: {
-            CREATE_BTN: "Crea",
-            SIDE_MENU_DASHBOARD: "Dashboard",
-            SIDE_MENU_PROFILE: "Profilo",
-        },
         HOME_ABOUT_TITLE: "Cosa è TskMe?",
         HOME_ABOUT_SUBTITLE: "L'app che organizza le tue task in modo efficiente.",
         HOME_ABOUT_BODY_1: "TskMe è un'app pensata per chi ha bisogno di organizzare le proprie task in modo efficiente e intuitivo. Con un' interfaccia semplice e chiara, permette di gestire e monitorare le tue attività quotidiane, assegnando priorità e scadenze per garantire che nulla venga dimenticato.",
@@ -228,11 +223,6 @@ export default {
         HOME_HDIW_BODY: "With our application, you have access to an interactive calendar that allows you to easily organize and manage your daily tasks. You can add tasks, track their status, pause them, assign priorities, and set urgencies, all in just a few simple steps. Our intuitive interface will help you stay productive, making time management simpler and less stressful.",
         HOME_ANALYTICS_TITLE: "Analytics",
         HOME_ANALYTICS_BODY: "With our app, you'll have access to a section dedicated to analyzing your data. You can view the real-time performance of your activities, understand your progress, and optimize your work with detailed reports. Analytics are a powerful tool for making informed decisions and continuously improving your productivity.",
-        CONSOLE: {
-            CREATE_BTN: "Create",
-            SIDE_MENU_DASHBOARD: "Dashboard",
-            SIDE_MENU_PROFILE: "Profile",
-        },
         HOME_ABOUT_TITLE: "What is TskMe?",
         HOME_ABOUT_SUBTITLE: "The app that helps you organize your tasks efficiently.",
         HOME_ABOUT_BODY_1: "TskMe is an app designed for those who need to organize their tasks efficiently and intuitively. With a simple and clear interface, it allows you to manage and track your daily activities by assigning priorities and deadlines to ensure that nothing is forgotten.",
