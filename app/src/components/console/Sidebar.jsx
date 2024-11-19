@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux"
-import ProfileImagePlaceholder from "../shared/ProfileImagePlaceholder"
+import ProfileImagePlaceholder from "../shared/ProfileImagePlaceholder";
+import svg from "../../assets/img/TskMeLogo.svg";
 import { Link, useLocation } from "react-router-dom";
 import LogoutButton from "../shared/LogoutButton";
 import ActionButton from "../shared/ActionButton";
@@ -38,13 +39,10 @@ const Sidebar = () => {
         <>
             <div className="bg-white w-[250px] h-full flex flex-col justify-between">
                 <div className="flex flex-col">
-                    <div className="p-4">
-                        <h3 className="text-primary flex gap-2 text-2xl items-center font-bold">
-                            <i className="fa-regular fa-lemon"></i>
-                            <span>TskMe</span>
-                        </h3>
+                    <div className="pl-12">
+                        <Link to={"/"}> <img src={svg} alt="Register image" className="object-contain size-32 h-full"/></Link>
                     </div>
-                    <div className="p-4 flex flex-col">
+                    <div className="px-4 flex flex-col">
                         <div className="flex">
                             <ActionButton onClick={() => setIsOpenModal(true)}>
                                 <i className="fa-solid fa-plus text-primary"></i>
