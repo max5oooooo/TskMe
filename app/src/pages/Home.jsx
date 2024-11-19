@@ -1,14 +1,7 @@
 import { useDispatch } from "react-redux";
 import useDictionary from "../hook/useDictionary";
 import { login } from "../store/slices/authSlice";
-import { Link, useNavigate } from "react-router-dom";
-import { animateScroll as scroll } from "react-scroll";
-import SwitchLanguage from "../components/shared/SwitchLanguage";
-
-/**
- * 
- * 
- */
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -23,65 +16,8 @@ const Home = () => {
 
   return (
     <>
-      {/* Navbar */}
-      <nav className="flex justify-between items-center p-6 bg-white text-black">
-        <h1 className="text-2xl font-semibold text-primary"><i class="fa-regular fa-lemon" aria-hidden="true"></i>TSK Me</h1>
-
-        <div className="flex space-x-6">
-          {/* Links per le sezioni */}
-          <Link to="#features" smooth duration={500} className="hover:text-[#40916C] transition duration-300">
-            Features Section
-          </Link>
-          <Link to="#about" smooth duration={500} className="hover:text-[#40916C] transition duration-300">
-            About Section
-          </Link>
-          <Link to="#cta" smooth duration={500} className="hover:text-[#40916C] transition duration-300">
-            Call to Action
-          </Link>
-
-        </div>
-        <div className="flex gap-1">
-          <button
-            onClick={handleLogin}
-            className="rounded-full border border-slate-100 shadow p-3 px-5 items-center cursor-pointer bg-primary text-white"
-          >
-            {dictionary.HOME_CTA_BUTTON}
-          </button>
-          <button
-            onClick={handleLogin}
-            className="rounded-full border border-slate-100 shadow p-3 px-5 items-center cursor-pointer bg-primary text-white"
-          >
-            Registrati
-          </button>
-          <SwitchLanguage />
-        </div>
-
-      </nav>
-
-      {/* Hero Section */}
-      <section className="bg-primary text-white py-16 px-6 md:px-16 flex items-center">
-        <div className="flex-1 px-8 max-w-lg mx-auto">
-          <h2 className="text-4xl font-semibold">{dictionary.HOME_HERO_TITLE}</h2>
-          <p className="mt-4 text-xl">{dictionary.HOME_HERO_SUBTITLE}</p>
-          <button
-            onClick={handleLogin}
-            className="mt-8 px-8 py-3 rounded-full border border-slate-100 shadow items-center cursor-pointer bg-white text-primary block mx-auto"
-          >
-            {dictionary.HOME_HERO_CTA_BUTTON}
-          </button>
-        </div>
-        <div className="flex-1">
-          {/* Qui puoi inserire la tua immagine */}
-          <img
-            src="https://images.ctfassets.net/xjcz23wx147q/2oiMdOggDxqcAwWPBbWrOZ/bebd506e5bcf49b163efca81049729be/pm-marketing-hero.webp"
-            alt="Hero Image"
-            className="w-full h-auto object-cover"
-          />
-        </div>
-      </section>
-
       {/* About Section */}
-      <section id="#about" className="py-16 bg-white text-center">
+      <section id="about" className="py-16 bg-white text-center w-full max-w-[1320px]">
         <h2 className="text-3xl font-semibold text-primary">{dictionary.HOME_ABOUT_TITLE}</h2>
         <p className="mt-4 text-lg text-primary">{dictionary.HOME_ABOUT_SUBTITLE}</p>
         <div className="mt-8 px-4 max-w-3xl mx-auto p-4 font-bold">
@@ -92,7 +28,7 @@ const Home = () => {
       </section>
 
       {/* Sezione Come Funziona (Cascata alternata) */}
-      <section className="py-16 bg-white text-center">
+      <section className="py-16 bg-white text-center w-full max-w-[1320px]">
         <h2 className="text-3xl font-semibold text-primary">{dictionary.HOME_HDIW_TITLE}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 px-4">
           {/* Prima colonna: Titolo e descrizione */}
@@ -107,21 +43,24 @@ const Home = () => {
       </section>
 
       {/* Sezione Analytics */}
-      <section className="py-16 bg-[#B7E4C7] text-center">
-        <h2 className="text-3xl font-semibold text-primary">{dictionary.HOME_ANALYTICS_TITLE}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 px-4">
-          {/* Prima colonna: Foto */}
-          <div className="flex justify-center items-center min-h-[400px]">
-            <img src="path-to-your-analytics-image.jpg" alt="Analytics Screenshot" className="w-full h-auto object-cover max-w-lg" />
-          </div>
-          {/* Seconda colonna: Descrizione */}
-          <div className="flex flex-col justify-center items-start space-y-4 min-h-[400px]">
-            <p className="text-lg text-black">{dictionary.HOME_ANALYTICS_BODY}</p>
+      <section className="py-16 bg-[#B7E4C7] text-center w-full flex justify-center">
+        <div className="w-full max-w-[1320px]">
+          <h2 className="text-3xl font-semibold text-primary">{dictionary.HOME_ANALYTICS_TITLE}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 px-4">
+            {/* Prima colonna: Foto */}
+            <div className="flex justify-center items-center min-h-[400px]">
+              <img src="path-to-your-analytics-image.jpg" alt="Analytics Screenshot" className="w-full h-auto object-cover max-w-lg" />
+            </div>
+            {/* Seconda colonna: Descrizione */}
+            <div className="flex flex-col justify-center items-start space-y-4 min-h-[400px]">
+              <p className="text-lg text-black">{dictionary.HOME_ANALYTICS_BODY}</p>
+            </div>
           </div>
         </div>
       </section>
+
       {/* Features Section */}
-      <section id="#features" className="py-16 bg-white text-center">
+      <section id="features" className="py-16 bg-white text-center w-full max-w-[1320px]">
         <h2 className="text-3xl font-semibold text-primary">{dictionary.HOME_FEATURES_TITLE}</h2>
         <p className="mt-4 text-lg">{dictionary.HOME_FEATURES_SUBTITLE}</p>
 
@@ -144,56 +83,61 @@ const Home = () => {
 
           {/* Feature 2 */}
           <div className="feature-card bg-secondary p-6 rounded-lg shadow-md">
-            <div className="mb-4">
-              {/* Icona */}
-              <div className="flex justify-center items-center h-full">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#40916C" className="w-16 h-16">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
-                </svg>
-              </div>
+            <div className="w-full max-w-[1320px]">
+              <div className="mb-4">
+                {/* Icona */}
+                <div className="flex justify-center items-center h-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#40916C" className="w-16 h-16">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                  </svg>
+                </div>
 
+              </div>
+              <h3 className="text-2xl font-semibold text-primary">{dictionary.HOME_FEATURE_2_TITLE}</h3>
+              <p>{dictionary.HOME_FEATURE_2_DESCRIPTION}</p>
             </div>
-            <h3 className="text-2xl font-semibold text-primary">{dictionary.HOME_FEATURE_2_TITLE}</h3>
-            <p>{dictionary.HOME_FEATURE_2_DESCRIPTION}</p>
           </div>
 
           {/* Feature 3 - Facile da usare */}
           <div className="feature-card bg-secondary p-6 rounded-lg shadow-md">
-            <div className="mb-4">
-              {/* Icona */}
-              <div className="flex justify-center items-center h-full">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#40916C" className="w-16 h-16">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75a4.5 4.5 0 0 1-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 1 1-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 0 1 6.336-4.486l-3.276 3.276a3.004 3.004 0 0 0 2.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852Z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.867 19.125h.008v.008h-.008v-.008Z" />
-                </svg>
-              </div>
+            <div className="w-full max-w-[1320px]">
+              <div className="mb-4">
+                {/* Icona */}
+                <div className="flex justify-center items-center h-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#40916C" className="w-16 h-16">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75a4.5 4.5 0 0 1-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 1 1-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 0 1 6.336-4.486l-3.276 3.276a3.004 3.004 0 0 0 2.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852Z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.867 19.125h.008v.008h-.008v-.008Z" />
+                  </svg>
+                </div>
 
+              </div>
+              <h3 className="text-2xl font-semibold text-primary">{dictionary.HOME_FEATURE_3_TITLE}</h3>
+              <p>{dictionary.HOME_FEATURE_3_DESCRIPTION}</p>
             </div>
-            <h3 className="text-2xl font-semibold text-primary">{dictionary.HOME_FEATURE_3_TITLE}</h3>
-            <p>{dictionary.HOME_FEATURE_3_DESCRIPTION}</p>
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section id="#cta" className="bg-primary text-white text-center py-16">
-        <h2 className="text-3xl font-semibold">{dictionary.HOME_HERO_CTA_BUTTON}</h2>
-        <p className="mt-4">{dictionary.HOME_CTA_DESCRIPTION}</p>
-        <div className="flex justify-center align-center gap-2">
-          <button
-            onClick={handleLogin}
-            className="rounded-full border border-slate-100 mt-8 px-8 py-3 shadow cursor-pointer bg-white text-primary"
-          >
-            {dictionary.HOME_CTA_BUTTON}
-          </button>
-          <button
-            onClick={handleLogin}
-            className="mt-8 px-8 py-3 rounded-full border border-slate-100 shadow cursor-pointer bg-white text-primary"
-          >
-            Registrati
-          </button>
+      <section id="cta" className="bg-primary text-white text-center py-16 w-full flex justify-center">
+        <div className="w-full max-w-[1320px]">
+          <h2 className="text-3xl font-semibold">{dictionary.HOME_HERO_CTA_BUTTON}</h2>
+          <p className="mt-4">{dictionary.HOME_CTA_DESCRIPTION}</p>
+          <div className="flex justify-center align-center gap-2">
+            <button
+              onClick={handleLogin}
+              className="rounded-full border border-slate-100 mt-8 px-8 py-3 shadow cursor-pointer bg-white text-primary"
+            >
+              {dictionary.HOME_CTA_BUTTON}
+            </button>
+            <button
+              onClick={handleLogin}
+              className="mt-8 px-8 py-3 rounded-full border border-slate-100 shadow cursor-pointer bg-white text-primary"
+            >
+              Registrati
+            </button>
+          </div>
         </div>
-
       </section>
     </>
   );
