@@ -16,14 +16,17 @@ const Navbar = () => {
 
                 <div className="flex space-x-6">
                     {/* Links per le sezioni */}
-                    <a href="#features" className="hover:text-[#40916C] transition duration-300">
-                        Cosa è TskMe?
-                    </a>
                     <a href="#about" className="hover:text-[#40916C] transition duration-300">
-                        About Section
+                    {dictionary.HOME_ABOUT_TITLE}
                     </a>
-                    <a href="#cta" className="hover:text-[#40916C] transition duration-300">
-                        Call to Action
+                    <a href="#HowItWorks" className="hover:text-[#40916C] transition duration-300">
+                    {dictionary.HOME_HDIW_TITLE}
+                    </a>
+                    <a href="#Analytics" className="hover:text-[#40916C] transition duration-300">
+                    {dictionary.HOME_ANALYTICS_TITLE}
+                    </a>
+                    <a href="#features" className="hover:text-[#40916C] transition duration-300">
+                    {dictionary.HOME_FEATURES_TITLE}
                     </a>
                 </div>
                 <div className="flex gap-1">

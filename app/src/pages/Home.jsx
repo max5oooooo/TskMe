@@ -1,5 +1,7 @@
 import useDictionary from "../hook/useDictionary";
 import { Link } from "react-router-dom";
+import HowToWorkImage from "../assets/img/HowToWorkpage.png";
+import AnalitycsImage from "../assets/img/AnalitycsPage.png";
 
 
 const Home = () => {
@@ -19,31 +21,31 @@ const Home = () => {
       </section>
 
       {/* Sezione Come Funziona (Cascata alternata) */}
-      <section className="py-16 bg-white text-center w-full max-w-[1320px]">
+      <section id="HowItWorks" className="py-16 bg-white text-center w-full max-w-[1320px]">
         <h2 className="text-3xl font-semibold text-primary">{dictionary.HOME_HDIW_TITLE}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 px-4">
           {/* Prima colonna: Titolo e descrizione */}
-          <div className="flex flex-col justify-center items-start space-y-4 min-h-[400px]">
-            <p className="text-lg text-black">{dictionary.HOME_HDIW_BODY}</p>
+          <div className="flex flex-col justify-center items-start space-y-4  min-h-[400px] pr-3 ">
+            <p className="text-lg  text-black">{dictionary.HOME_HDIW_BODY}</p>
           </div>
           {/* Seconda colonna: Foto dell'app */}
           <div className="flex justify-center items-center min-h-[400px]">
-            <img src="path-to-your-app-image.jpg" alt="App Screenshot" className="w-full h-auto object-cover max-w-lg" />
+            <img src={HowToWorkImage} alt="App Screenshot" className="w-full h-auto object-cover border-2 rounded-md" />
           </div>
         </div>
       </section>
 
       {/* Sezione Analytics */}
-      <section className="py-16 bg-[#B7E4C7] text-center w-full flex justify-center">
+      <section id="Analytics" className="py-16 bg-[#B7E4C7] text-center w-full  flex justify-center">
         <div className="w-full max-w-[1320px]">
           <h2 className="text-3xl font-semibold text-primary">{dictionary.HOME_ANALYTICS_TITLE}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 px-4">
             {/* Prima colonna: Foto */}
             <div className="flex justify-center items-center min-h-[400px]">
-              <img src="path-to-your-analytics-image.jpg" alt="Analytics Screenshot" className="w-full h-auto object-cover max-w-lg" />
+              <img src={AnalitycsImage} alt="Analytics Screenshot" className="w-full h-auto object-cover border-2 rounded-md " />
             </div>
             {/* Seconda colonna: Descrizione */}
-            <div className="flex flex-col justify-center items-start space-y-4 min-h-[400px]">
+            <div className="flex flex-col justify-center items-start space-y-4 min-h-[400px] pl-3">
               <p className="text-lg text-black">{dictionary.HOME_ANALYTICS_BODY}</p>
             </div>
           </div>
@@ -113,7 +115,7 @@ const Home = () => {
       <section id="cta" className="bg-primary text-white text-center py-16 w-full flex justify-center">
         <div className="w-full max-w-[1320px]">
           <h2 className="text-3xl font-semibold">{dictionary.HOME_HERO_CTA_BUTTON}</h2>
-          <p className="mt-4">{dictionary.HOME_CTA_DESCRIPTION}</p>
+          <p className="mt-4">{dictionary.HOME_CTA_SECTION_DESCRIPTION}</p>
           <div className="flex justify-center align-center gap-2">
             <Link
               to="/login"

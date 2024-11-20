@@ -42,7 +42,7 @@ const TaskTable = () => {
                         {/*<th className="border-2 border-primary">{dictionary.TABELA_HOME.TASK_COLABORATORS}</th>*/}
                         <th className="p-1 border-2 border-blue-gray-100 bg-blue-gray-50">{dictionary.TABELA_HOME.TASK_STATUS}</th>
                         <th className="p-1 border-2 border-blue-gray-100 bg-blue-gray-50">{dictionary.TABELA_HOME.TASK_PRIORITY}</th>
-                        <th className="p-1 border-2 border-blue-gray-100 bg-blue-gray-50">bottons</th>
+                        <th className="p-1 border-2 border-blue-gray-100 bg-blue-gray-50"></th>
                     </tr>
                 </thead>
                 <tbody>
