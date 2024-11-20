@@ -1,19 +1,23 @@
 import useDictionary from '../hook/useDictionary';
 import { Link } from 'react-router-dom';
 import SwitchLanguage from "../components/shared/SwitchLanguage";
+import svg from "../assets/img/TskMeLogo.svg";
+
 
 const Navbar = () => {
     const dictionary = useDictionary();
 
     return (
-        <nav className="flex w-full justify-center items-center p-6 bg-white text-black fixed top-0 left-0 shadow">
+        <nav className="flex w-full justify-center items-center p-2 bg-white text-black fixed top-0 left-0 shadow">
             <div className="w-full max-w-[1320px] flex justify-between items-center">
-                <h1 className="text-2xl font-semibold text-primary"><i className="fa-regular fa-lemon" aria-hidden="true"></i>TSK Me</h1>
+            <div className="">
+                        <Link to={"/"}> <img src={svg} alt="Register image" className="object-contain size-20"/></Link>
+                    </div>
 
                 <div className="flex space-x-6">
                     {/* Links per le sezioni */}
                     <a href="#features" className="hover:text-[#40916C] transition duration-300">
-                        Features Section
+                        Cosa è TskMe?
                     </a>
                     <a href="#about" className="hover:text-[#40916C] transition duration-300">
                         About Section
