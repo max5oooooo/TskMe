@@ -1,6 +1,6 @@
 import useDictionary from "../hook/useDictionary";
 import { Link } from "react-router-dom";
-import HowToWorkImage from "../assets/img/HowToWorkpage.png";
+import HowToWorkImage from "../assets/img/HowToWorkpage.jpg";
 import AnalitycsImage from "../assets/img/AnalitycsPage.png";
 
 
